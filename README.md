@@ -1,6 +1,6 @@
 # PolyLine
 
-C# WinfForms solution to calculating offset polylines
+C# WinfForms solution to calculating offset polylines based on point and line homogeneous coordinates.
 
 ### Screenshot
 
