@@ -177,8 +177,8 @@ namespace JA.UI
             e.Graphics.TranslateTransform(DrawOrigin.X, DrawOrigin.Y);
             e.Graphics.ScaleTransform(DrawScale.Width, DrawScale.Height);
 
-            SegmentList L1=Poly.Offset(4);
-            SegmentList L2=Poly.Offset(-4);
+            SegmentList L1=Poly.Offset(7);
+            SegmentList L2=Poly.Offset(-7);
 
             for (int i=0; i<Count; i++)
             {
@@ -188,21 +188,21 @@ namespace JA.UI
                     e.Graphics.DrawPoint(Poly.Lines[i].StartPoint, pen);
                     e.Graphics.DrawPoint(Poly.Lines[i].EndPoint, pen);
                     pen.Width=2;
-                    //e.Graphics.DrawLine(L1.Lines[i], pen);
-                    //e.Graphics.DrawLine(L2.Lines[i], pen);
+                    e.Graphics.DrawLine(L1.Lines[i], pen);
+                    e.Graphics.DrawLine(L2.Lines[i], pen);
                     pen.DashStyle=System.Drawing.Drawing2D.DashStyle.Dash;
                     pen.Width=1;
-                    e.Graphics.DrawPipe(12f, Poly.Lines[i], Color.Yellow, Color.Black);
-                    e.Graphics.DrawLine(Poly.Lines[i], pen);
+                    //e.Graphics.DrawPipe(12f, Poly.Lines[i], Color.Yellow, Color.Black);
+                    //e.Graphics.DrawLine(Poly.Lines[i], pen);
                 }
                 if (i==Selected)
                 {
                     using (Pen pen=new Pen(Color.FromArgb(92, 250, 92, 92), 2))
                     {
                         pen.DashStyle=System.Drawing.Drawing2D.DashStyle.Solid;
-                       // e.Graphics.DrawLine(L1.Lines[i].Offset(2), pen);
-                        //e.Graphics.DrawLine(L2.Lines[i].Offset(-2), pen);
-                        e.Graphics.DrawLine(Poly.Lines[i], pen);                                  
+                        e.Graphics.DrawLine(L1.Lines[i].Offset(2), pen);
+                        e.Graphics.DrawLine(L2.Lines[i].Offset(-2), pen);
+                        //e.Graphics.DrawLine(Poly.Lines[i], pen);                                  
                     }
                 }
             }
