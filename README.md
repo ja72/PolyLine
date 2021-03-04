@@ -4,7 +4,7 @@ C# WinfForms solution to calculating offset polylines based on point and line ho
 
 ### Screenshot
 
-![scr](screenshot.png)
+![scr](screenshot2.png)
 
 ### Code
 
