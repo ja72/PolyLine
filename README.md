@@ -12,6 +12,7 @@ Using homogeneous coordinates for points and lines which make finding the inerse
 
 The magic happens in a function `Offset()` part of the `SegmentList` class
 
+```
 public SegmentList Offset(float distance)
 {
     List<Line2> new_lines=new List<Line2>();
@@ -44,6 +45,8 @@ public SegmentList Offset(float distance)
     // Create new polyline from array of line segments
     return new SegmentList(result.ToArray());
 }
+```
+
 For each line segment it calls `Line.Offset()` first and then it finds the previous and next lines. It uses that to call `.TrimBetween()` that trims the ends on the line according to the infinite line of these sourounding segments.
 
 The `.Offset(d)` method modifies the `(a,b,c)` parameters of an infinite line into `(a,b,c + d*√(a^2+b^2))` this modifies the distance parameter `c` by moving it the amount specified by `d`.
